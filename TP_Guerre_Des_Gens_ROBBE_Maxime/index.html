@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Dictionnaire d'expressions pour les vieux - ROBBE Maxime SLAM1</title>
+</head>
+
+<body>
+
+    <h1>Dictionnaire d'expressions pour les vieux</h1>
+
+    <p>Veuillez choisir votre thématique pour recevoir une excuse.</p>
+
+    <form action="./assets/php/affichage.php" method="POST" id="formulaire_generation" class="formulaire_style">
+        <div class="theme_excuse">
+            <label for="choix_thematique">Thématique</label>
+            <select name="id_thematique" id="choix_thematique" required>
+                <option value="" disabled selected>Quelle sera votre thématique ?</option>
+                <option value="1">Amour</option>
+                <option value="2">Salutations</option>
+                <option value="3">Humour</option>
+                <option value="4">Flemme</option>
+                <option value="5">Moquerie</option>
+                <option value="6">Heureux</option>
+            </select>
+        </div>
+        <div class="conteneur_bouton">
+            <button type="submit" name="bouton_generer">Recevoir les expressions</button>
+        </div>
+    </form>
+
+    <form action="./assets/php/ajout.php" method="POST" id="ajouter_expression" class="formulaire_style">
+        <div class="theme_expression">
+            <label for="thematique_ajout">Thématique de l'ajout</label>
+            <select name="id_thematique" id="thematique_ajout" required>
+                <option value="" disabled selected>Dans quelle thématique souhaitez-vous rajouter votre expression ?
+                </option>
+                <option value="1">Amour</option>
+                <option value="2">Salutations</option>
+                <option value="3">Humour</option>
+                <option value="4">Flemme</option>
+                <option value="5">Moquerie</option>
+                <option value="6">Heureux</option>
+            </select>
+
+            <label for="texte_nouvelle_expression">Veuillez saisir votre expression</label>
+            <textarea name="contenu_expression" id="texte_nouvelle_expression"
+                placeholder="Banave, sert à dire un mensonge" required minlength="3" maxlength="100"></textarea>
+        </div>
+        <div class="conteneur_bouton">
+            <button type="submit" name="bouton_ajouter" class="bouton_secondaire">Ajouter l'expression à la
+                base</button>
+        </div>
+    </form>
+
+    <form action="./assets/php/affichage_full.php" method="POST" class="formulaire_style">
+        <div class="groupe_champ">
+            <label>Consulter la base</label>
+            <p>Voir la liste complète des expressions enregistrées.</p>
+        </div>
+        <button type="submit" name="bouton_tout_voir" class="bouton_secondaire">Afficher toutes les expressions</button>
+    </form>
+
+
+    <form action="./assets/php/suppression.php" method="POST" class="formulaire_style">
+        <div class="suppression_expression">
+            <label>Suppression d'une expression</label>
+            <select name="id_thematique" id="thematique_suppression" required>
+                <option value="" disabled selected>Dans quelle thématique se trouve votre expression ?</option>
+                <option value="1">Amour</option>
+                <option value="2">Salutations</option>
+                <option value="3">Humour</option>
+                <option value="4">Flemme</option>
+                <option value="5">Moquerie</option>
+                <option value="6">Heureux</option>
+            </select>
+
+            <label for="suppression_id_texte">Veuillez saisir l'expression que vous souhaitez supprimer</label>
+            <textarea name="suppression_excuse" id="suppression_id_texte" placeholder="Le nom de votre expression"
+                required minlength="3" maxlength="100"></textarea>
+        </div>
+        <div class="conteneur_bouton">
+            <button type="submit" name="bouton_suppression" class="bouton_secondaire">Supprimer l'expression</button>
+        </div>
+    </form>
+    <form action="./assets/php/modification.php" method="POST" class="formulaire_style">
+        <div class="theme_expression">
+            <label>Modifier une expression</label>
+
+            <label for="nom_modif">Nom de l'expression à modifier</label>
+            <input type="text" name="nom_expression" id="nom_modif" placeholder="Ex: Banave" required
+                style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; margin-bottom: 10px;">
+
+            <label for="nouveau_texte">Nouveau contenu (définition)</label>
+            <textarea name="nouveau_contenu" id="nouveau_texte" placeholder="Saisissez la nouvelle définition..."
+                required minlength="3"></textarea>
+        </div>
+
+        <button type="submit" name="bouton_modifier" class="bouton_secondaire">Mettre à jour l'expression</button>
+    </form>
+
+</html>

@@ -1,0 +1,116 @@
+/* Importation d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --couleur-primaire: #6366f1;
+    --couleur-survol: #4f46e5;
+    --couleur-fond: #f8fafc;
+    --couleur-texte: #1e293b;
+    --fond-carte: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--couleur-primaire);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #64748b;
+}
+
+.formulaire_style {
+    background: var(--fond-carte);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.formulaire_style:hover {
+    transform: translateY(-5px);
+}
+
+.theme_expression {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+select, textarea {
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box; /* Important pour que le padding ne déborde pas */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--couleur-primaire);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--couleur-primaire);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--couleur-survol);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.bouton_secondaire {
+    background-color: #1e293b;
+    margin-top: 10px;
+}
+
+.bouton_secondaire:hover {
+    background-color: #000000;
+}
